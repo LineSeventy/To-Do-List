@@ -15,23 +15,35 @@
     <div id="content">
         
         <div class="container">
-            <button class="addBtn">Add</button>
-            <button>Delete</button>
+            <div class="containerBtn">
+            <button class="addBtn">Create</button>
+            <button class="doneBtn" id="done">Finished</button>
+            <button id="deleteBtn">Delete</button>
+            <button id="priorityBtn">Priority</button>
             <button>Edit</button>
-
-            <div class="newItems">
+        </div>
                 <ul>
+                    <form id="list">
 
-                </ul>
-            </div>
+                </form>
+            </ul>
+
 
             <div id="modal" class="modal">
                 <div class="modal-content">
                   <span class="close" id="closeModal">X</span>
                     <label>
                         Title:
-                        <input type="text" name="To Do">
+                        <input type="text" name="To Do" id="itemTitle">
                     </label>
+                    <label>
+                        Description: <input type="text" id="desc">
+                    </label>
+                    <label>
+                        Due Date:
+                        <input type="datetime-local" name="" id="dueDate">
+                    </label>
+                    <button id="submitModal">Submit</button>
                 </div>
 
         
