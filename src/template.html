@@ -23,9 +23,11 @@
             <button id="editBtn">Edit</button>
             </div>
             <div class="sideBar">
-                <Button><h1>+</h1></Button>
-                <button>default <input type="checkbox" name="" id=""></button>
-            </div>
+                <ul>
+                <li><Button class="sideBarAdd"><h1>+</h1></Button></li>
+                <li><button>default <input type="checkbox" name="" id=""></button></li>
+                </ul>
+                </div>
                 <ul>
                     <form id="list">
 
@@ -35,21 +37,33 @@
 
             <div id="modal" class="modal">
                 <div class="modal-content">
-                  <span class="close" id="closeModal">X</span>
-                    <label>
-                        Title:
-                        <input type="text" name="To Do" id="itemTitle">
-                    </label>
-                    <label>
-                        Description: <input type="text" id="desc">
-                    </label>
-                    <label>
-                        Due Date:
-                        <input type="datetime-local" name="" id="dueDate">
-                    </label>
-                    <button id="submitModal">Submit</button>
+                  <span class="close" id="closeMainModal">X</span>
+                  <label>
+                    Title:
+                    <input type="text" name="To Do" id="itemTitle">
+                  </label>
+                  <label>
+                    Description: <input type="text" id="desc">
+                  </label>
+                  <label>
+                    Due Date:
+                    <input type="datetime-local" name="" id="dueDate">
+                  </label>
+                  <button id="submitModal">Submit</button>
                 </div>
-            </div>
+              </div>
+              
+              <div id="sideModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" id="closeSideModal">X</span>
+                  <label>
+                    Title:
+                    <input type="text">
+                  </label>
+                  <button id="sidedBarSubmit">Submit</button>
+                </div>
+              </div>
+              
     
         </div>
     </div>

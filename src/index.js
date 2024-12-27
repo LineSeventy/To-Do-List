@@ -1,76 +1,98 @@
 import "./style.css";
 "use strict";
 
-  const modalSystem = () => {
-    const openModal = document.querySelector('.addBtn');
-    const closeModal = document.getElementById('closeModal');
-    const modal = document.getElementById('modal');
+const list = document.querySelector("#list");
+const modal = document.getElementById('modal');
 
-    openModal.addEventListener('click', () => {
-      modal.style.display = 'flex';
-    });
+const modalSystem = () => {
+  const openModal = document.querySelector('.addBtn');
+  const closeMainModal = document.getElementById('closeMainModal'); 
+  const modal = document.getElementById('modal'); 
 
-    closeModal.addEventListener('click', () => {
+  const openPlusModal = document.querySelector('.sideBarAdd'); 
+  const closeSideModal = document.getElementById('closeSideModal'); 
+  const sideBarModal = document.querySelector('#sideModal');
+
+
+  openModal.addEventListener('click', () => {
+    modal.style.display = 'flex';
+  });
+
+ 
+  closeMainModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+
+  openPlusModal.addEventListener('click', () => {
+    sideBarModal.style.display = 'flex';
+  });
+
+
+  closeSideModal.addEventListener('click', () => {
+    sideBarModal.style.display = 'none';
+  });
+
+
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
       modal.style.display = 'none';
-    });
+    }
+    if (event.target === sideBarModal) {
+      sideBarModal.style.display = 'none';
+    }
+  });
+};
 
-    window.addEventListener('click', (event) => {
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
+const addItem = () => {
+  const title = document.querySelector("#itemTitle");
+  const desc = document.querySelector("#desc");
+  const submit = document.getElementById("submitModal");
+  const userTimeInput = document.getElementById("dueDate");
+
+  const handleAdd = () => {
+    const titleName = title.value;
+    const descContent = desc.value;
+    const userTime = userTimeInput.value; // Get the user input for time
+
+    if (!titleName || !descContent || !userTime) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    const check = document.createElement("input");
+    const timerDate = document.createElement("h6");
+    const item = document.createElement("label");
+    const itemContainer = document.createElement("li");
+    const descPara = document.createElement("p");
+
+    descPara.textContent = descContent;
+    item.textContent = titleName;
+    check.type = "checkbox";
+    timerDate.textContent = userTime;
+
+    itemContainer.appendChild(check);
+    itemContainer.appendChild(item);
+    itemContainer.appendChild(descPara);
+    itemContainer.appendChild(timerDate);
+
+    list.appendChild(itemContainer);
+
+    startCountdown(userTime, timerDate);
+
+    modal.style.display = "none";
+    desc.value = "";
+    title.value = "";
+    userTimeInput.value = "";
   };
 
-  const list = document.querySelector("#list");
-  const modal = document.getElementById('modal');
-
-
-  const addItem = () => {
-    const title = document.querySelector("#itemTitle");
-    const desc = document.querySelector("#desc");
-    const submit = document.getElementById("submitModal");
-    const userTimeInput = document.getElementById("dueDate");
-  
-    const handleAdd = () => {
-      const titleName = title.value;
-      const descContent = desc.value;
-      const userTime = userTimeInput.value;
-  
-      if (!titleName || !descContent || !userTime) {
-        alert("Please fill in all fields.");
-        return;
-      }
-  
-      const check = document.createElement("input");
-      const timerDate = document.createElement("h6");
-      const item = document.createElement("label");
-      const itemContainer = document.createElement("li");
-      const descPara = document.createElement("p");
-  
-      descPara.textContent = descContent;
-      item.textContent = titleName;
-      check.type = "checkbox";
-      timerDate.textContent = userTime;
-  
-      itemContainer.appendChild(check);
-      itemContainer.appendChild(item);
-      itemContainer.appendChild(descPara);
-      itemContainer.appendChild(timerDate);
-  
-      list.appendChild(itemContainer);
-  
-      modal.style.display = "none";
-      desc.value = "";
-      title.value = "";
-      userTimeInput.value = "";
-    };
   
 
     submit.removeEventListener("click", handleAdd);
     submit.addEventListener("click", handleAdd);
   };
   
-  const editItem = () => {
+const editItem = () => {
     const edit = document.getElementById("editBtn");
   
     edit.addEventListener("click", () => {
@@ -110,9 +132,9 @@ import "./style.css";
   
       const submit = document.getElementById("submitModal");
   
-      const handleEdit = () => {
-        const updatedTitle = title.value;
-        const updatedDesc = desc.value;
+    const handleEdit = () => {
+      const updatedTitle = title.value;
+       const updatedDesc = desc.value;
         const updatedDueDate = userTimeInput.value;
   
         if (!updatedTitle || !updatedDesc || !updatedDueDate) {
@@ -137,7 +159,8 @@ import "./style.css";
         itemContainer.appendChild(timerDate);
   
         list.appendChild(itemContainer);
-  
+        
+        startCountdown(updatedDueDate, timerDate);
         modal.style.display = "none";
         title.value = "";
         desc.value = "";
@@ -146,7 +169,6 @@ import "./style.css";
 
         submit.removeEventListener("click", handleEdit);
       };
-  
 
       submit.removeEventListener("click", handleEdit);
       submit.addEventListener("click", handleEdit);
@@ -155,7 +177,7 @@ import "./style.css";
   
   
   const startCountdown = (userTime, timerDate) => {
-    const dueDate = new Date(userTime);
+    const dueDate = new Date(userTime); // Convert string to Date object
   
     const timer = setInterval(() => {
       const now = new Date();
@@ -179,7 +201,7 @@ import "./style.css";
     }, 1000);
   };
   
-  const doneItem = () => {
+const doneItem = () => {
     const done = document.querySelector('#done');
 
     done.addEventListener("click", () => {
@@ -195,7 +217,7 @@ import "./style.css";
     });
   };
 
-  const deleteItem = () => {
+const deleteItem = () => {
     const deleteBtn = document.querySelector('#deleteBtn');
 
     deleteBtn.addEventListener("click", () => {
@@ -210,7 +232,7 @@ import "./style.css";
     });
   };
 
-  const priorityItem = () => {
+const priorityItem = () => {
     const prioritize = document.getElementById('priorityBtn');
 
     prioritize.addEventListener("click", () => {
@@ -225,7 +247,7 @@ import "./style.css";
       });
     });
   };
-  
+
   editItem();
   priorityItem();
   modalSystem();
