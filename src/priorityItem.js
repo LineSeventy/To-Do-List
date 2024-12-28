@@ -1,10 +1,10 @@
-import {list} from "./index";
+import {main} from "./index";
  export const priorityItem = () => {
     const prioritize = document.getElementById('priorityBtn');
 
     prioritize.addEventListener("click", () => {
 
-      const items = Array.from(list.querySelectorAll('li'));
+      const items = Array.from(main.querySelectorAll('div'));
 
       const checkedItems = items.filter(item => item.querySelector('input[type="checkbox"]').checked);
 

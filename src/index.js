@@ -4,11 +4,15 @@ import {priorityItem} from "./priorityItem"
 import {deleteItem} from "./removeItem"
 import {doneItem} from "./completeItem"
 import {editItem} from "./editItem"
+import {sideBarAddItem} from "./sidebar"
 "use strict";
 
- export const list = document.querySelector("#list");
+export const main = document.querySelector("main");
 export const modal = document.getElementById('modal');
+export const sideBarModal = document.querySelector('#sideModal');
 
+export const listInfo = {};
+export let currentListInfo = {};
 const modalSystem = () => {
   const openModal = document.querySelector('.addBtn');
   const closeMainModal = document.getElementById('closeMainModal'); 
@@ -16,7 +20,7 @@ const modalSystem = () => {
 
   const openPlusModal = document.querySelector('.sideBarAdd'); 
   const closeSideModal = document.getElementById('closeSideModal'); 
-  const sideBarModal = document.querySelector('#sideModal');
+  
 
 
   openModal.addEventListener('click', () => {
@@ -48,6 +52,7 @@ const modalSystem = () => {
     }
   });
 };
+sideBarAddItem();
   editItem();
   priorityItem();
   modalSystem();

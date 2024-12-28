@@ -1,16 +1,16 @@
-import {list} from "./index";
+import {main} from "./index";
 export const doneItem = () => {
     const done = document.querySelector('#done');
 
     done.addEventListener("click", () => {
 
-      const items = Array.from(list.querySelectorAll('li'));
+      const items = Array.from(main.querySelectorAll(''));
 
       const checkedItems = items.filter(item => item.querySelector('input[type="checkbox"]').checked);
 
       checkedItems.forEach(item => {
-        item.style.fontStyle = "italic";
-        item.style.color = "blue";
+        main.style.fontStyle = "italic";
+        main.style.color = "blue";
       });
     });
   };

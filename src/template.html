@@ -21,19 +21,32 @@
             <button id="deleteBtn">Delete</button>
             <button id="priorityBtn">Priority</button>
             <button id="editBtn">Edit</button>
+            <button>Select All</button>
             </div>
             <div class="sideBar">
-                <ul>
-                <li><Button class="sideBarAdd"><h1>+</h1></Button></li>
-               <li><button><h1>All</h1></button></li>
-                <li><button>default <input type="checkbox" name="" id=""></button></li>  
-              </ul>
+                <div>
+                
+                  <Button class="sideBarAdd">
+                  <h1>Make</h1>
+                </Button>
+                <button>
+                  <h1>Delete</h1>
+                </button>
+                <button><h1>Select All</h1></button>
+               <button>
+                <h1><h1>Show All</h1></h1>
+              </button>
+             
                 </div>
-                <ul>
-                    <form id="list">
+                <ul id="titleList">
+                  <li> <button>default <input type="checkbox" name="" id=""></button></li>
+                </ul>
+</div>
 
-                </form>
-            </ul>
+
+<main>              
+ <form id="default"></form>
+</main>  
 
 
             <div id="modal" class="modal">
@@ -59,7 +72,7 @@
                   <span class="close" id="closeSideModal">X</span>
                   <label>
                     Title:
-                    <input type="text">
+                    <input type="text" id="sideTitleInput">
                   </label>
                   <button id="sidedBarSubmit">Submit</button>
                 </div>

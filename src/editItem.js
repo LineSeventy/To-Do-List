@@ -1,10 +1,10 @@
 import {startCountdown} from "./countdown";
-import {modal, list} from "./index"
+import {modal, main} from "./index"
 export const editItem = () => {
     const edit = document.getElementById("editBtn");
   
     edit.addEventListener("click", () => {
-      const items = Array.from(list.querySelectorAll("li"));
+      const items = Array.from(main.querySelectorAll("li"));
   
       const checkedItems = items.filter((item) =>
         item.querySelector('input[type="checkbox"]').checked
@@ -53,7 +53,7 @@ export const editItem = () => {
         const check = document.createElement("input");
         const timerDate = document.createElement("h6");
         const item = document.createElement("label");
-        const itemContainer = document.createElement("li");
+        const itemContainer = document.createElement("div");
         const descPara = document.createElement("p");
   
         descPara.textContent = updatedDesc;
@@ -66,7 +66,7 @@ export const editItem = () => {
         itemContainer.appendChild(descPara);
         itemContainer.appendChild(timerDate);
   
-        list.appendChild(itemContainer);
+        main.appendChild(itemContainer);
         
         startCountdown(updatedDueDate, timerDate);
         modal.style.display = "none";

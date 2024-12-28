@@ -7,7 +7,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Times New Roman", Times, serif;;
 }
 
 header{
@@ -101,10 +101,13 @@ header{
 
   ul{
     list-style: none;
-    grid-column: 2/ span 2;
+ 
   }
-
-  #list{
+main{
+  grid-column: 2/ span 2;
+  margin: 2em;
+}
+  #default{
     height: 100%;
     width: 100%;
     display: grid;
@@ -112,12 +115,12 @@ header{
     gap: 1rem;
   }
 
-  #list li {
+  #default div {
     width: 15rem;
     height: 15rem;
     box-shadow: var(--box-shadow);
   }
 
-  #list li p {
+  #default div p {
     margin: 1em;
   }
