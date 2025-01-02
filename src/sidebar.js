@@ -13,8 +13,11 @@ export const sideBarAddItem = () =>{
         const title = document.createElement("h1");
         const button = document.createElement("button")
         const container = document.createElement("li")
+        const check = document.createElement("input")
+        check.setAttribute("type", "checkbox");
         title.textContent = titleName;
         button.appendChild(title);
+        button.appendChild(check);
         container.appendChild(button)
         titleList.appendChild(container);
         sideBarModal.style.display = 'none';

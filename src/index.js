@@ -6,6 +6,7 @@ import {doneItem} from "./completeItem"
 import {editItem} from "./editItem"
 import {sideBarAddItem} from "./sidebar"
 import {deleteTitle} from "./deleteTitle"
+import {selectAllTitle} from "./selectAllTitle"
 "use strict";
 
 export const main = document.querySelector("main");
@@ -54,6 +55,7 @@ const modalSystem = () => {
     }
   });
 };
+selectAllTitle();
 deleteTitle();
 sideBarAddItem();
   editItem();
