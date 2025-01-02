@@ -12,7 +12,7 @@ export const addItem = () => {
   const handleAdd = () => {
     const titleName = title.value;
     const descContent = desc.value;
-    const userTime = userTimeInput.value;
+    let userTime = userTimeInput.value;
 
 
     if (!titleName || !descContent) {
@@ -20,7 +20,13 @@ export const addItem = () => {
       return;
     }
 
-    const wrapper = document.querySelector(`#${sidebarTitle.value}`);
+    if (!userTime || isNaN(new Date(userTime).getTime())) {
+      userTime = "No Due Date";
+    }
+    let wrapper = document.querySelector(`#${sidebarTitle.value}`);
+    if(wrapper == null){
+      wrapper = main.querySelector("form");
+    }
     const check = document.createElement("input");
     const timerDate = document.createElement("h6");
     const item = document.createElement("label");

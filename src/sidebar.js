@@ -12,7 +12,7 @@ export const sideBarAddItem = () =>{
 
         const title = document.createElement("h1");
         const button = document.createElement("button")
-        const container = document.createElement("div")
+        const container = document.createElement("li")
         title.textContent = titleName;
         button.appendChild(title);
         container.appendChild(button)

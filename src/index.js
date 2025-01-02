@@ -5,13 +5,16 @@ import {deleteItem} from "./removeItem"
 import {doneItem} from "./completeItem"
 import {editItem} from "./editItem"
 import {sideBarAddItem} from "./sidebar"
+import {deleteTitle} from "./deleteTitle"
 "use strict";
 
 export const main = document.querySelector("main");
 export const modal = document.getElementById('modal');
 export const sideBarModal = document.querySelector('#sideModal');
-
-
+export const titleLists = document.querySelector("#titleList")
+if(titleLists == null){
+  console.log("Fucked")
+}
 const modalSystem = () => {
   const openModal = document.querySelector('.addBtn');
   const closeMainModal = document.getElementById('closeMainModal'); 
@@ -51,7 +54,7 @@ const modalSystem = () => {
     }
   });
 };
-
+deleteTitle();
 sideBarAddItem();
   editItem();
   priorityItem();

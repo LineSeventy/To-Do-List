@@ -1,6 +1,10 @@
 export const startCountdown = (userTime, timerDate) => {
         const dueDate = new Date(userTime); 
-      
+        
+        if (isNaN(dueDate.getTime())) {
+          timerDate.textContent = "No due date";
+          return;
+        }
         const timer = setInterval(() => {
           const now = new Date();
           const timeDifference = dueDate - now;
