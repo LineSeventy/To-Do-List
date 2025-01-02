@@ -11,8 +11,7 @@ export const main = document.querySelector("main");
 export const modal = document.getElementById('modal');
 export const sideBarModal = document.querySelector('#sideModal');
 
-export const listInfo = {};
-export let currentListInfo = {};
+
 const modalSystem = () => {
   const openModal = document.querySelector('.addBtn');
   const closeMainModal = document.getElementById('closeMainModal'); 
@@ -52,6 +51,7 @@ const modalSystem = () => {
     }
   });
 };
+
 sideBarAddItem();
   editItem();
   priorityItem();

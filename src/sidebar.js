@@ -1,9 +1,11 @@
 
 import {sideBarModal} from "./index"
+import {newForm} from "./newForm"
+export const sidebarTitle = document.getElementById("sideTitleInput")
 export const sideBarAddItem = () =>{
     const sideBarSubmitBtn = document.querySelector("#sidedBarSubmit");
     const titleList = document.querySelector("#titleList");
-    const sidebarTitle = document.getElementById("sideTitleInput")
+
     sideBarSubmitBtn.addEventListener("click", () => {{
         
         let titleName = sidebarTitle.value;
@@ -16,10 +18,7 @@ export const sideBarAddItem = () =>{
         container.appendChild(button)
         titleList.appendChild(container);
         sideBarModal.style.display = 'none';
+        newForm();
     }})
 }
 
-const newContent = () => {
-    mainContent.remove
-    const newForm = document.createElement("form");
-}

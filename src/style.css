@@ -95,8 +95,13 @@ header{
     cursor: pointer;
   }
   form{
-    display: flex;
+    display: grid;
     flex-direction: column;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
   }
 
   ul{
@@ -107,20 +112,14 @@ main{
   grid-column: 2/ span 2;
   margin: 2em;
 }
-  #default{
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-  }
+ 
 
-  #default div {
+ main form div {
     width: 15rem;
     height: 15rem;
     box-shadow: var(--box-shadow);
   }
 
-  #default div p {
+  main form div p {
     margin: 1em;
   }
