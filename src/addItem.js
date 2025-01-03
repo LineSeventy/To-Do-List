@@ -23,10 +23,12 @@ export const addItem = () => {
     if (!userTime || isNaN(new Date(userTime).getTime())) {
       userTime = "No Due Date";
     }
+
     let wrapper = document.querySelector(`#${sidebarTitle.value}`);
     if(wrapper == null){
       wrapper = main.querySelector("form");
     }
+
     const check = document.createElement("input");
     const timerDate = document.createElement("h6");
     const item = document.createElement("label");
