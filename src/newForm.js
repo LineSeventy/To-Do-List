@@ -1,13 +1,22 @@
-import {sidebarTitle} from "./sidebar"
+
 import {main} from "./index"
 
-export const newForm = () => {
-  const formContainer = document.createElement("form");
-  formContainer.id = sidebarTitle.value;
+export const newForm = (formId) => {
 
+  let formContainer = document.getElementById(formId);
+
+  if (!formContainer) {
+      formContainer = document.createElement("form");
+      formContainer.id = formId;
+      main.appendChild(formContainer);
+  } else {
+      formContainer.innerHTML = '';
+  }
+
+ 
   const existingForms = main.querySelectorAll("form");
   existingForms.forEach(form => form.style.display = "none");
 
-  main.appendChild(formContainer);
-  
-}
+ 
+  formContainer.style.display = "block";
+};

@@ -28,7 +28,8 @@ export const addItem = () => {
     if(wrapper == null){
       wrapper = main.querySelector("form");
     }
-
+    wrapper.innerHTML = "";
+    
     const check = document.createElement("input");
     const timerDate = document.createElement("h6");
     const item = document.createElement("label");

@@ -8,6 +8,7 @@ import {sideBarAddItem} from "./sidebar"
 import {deleteTitle} from "./deleteTitle"
 import {selectAllTitle} from "./selectAllTitle"
 import {showAll} from "./showAllItems"
+import {changeForm} from "./switchingForm"
 "use strict";
 
 export const main = document.querySelector("main");
@@ -55,6 +56,7 @@ const modalSystem = () => {
     }
   });
 };
+changeForm();
 selectAllTitle();
 deleteTitle();
 sideBarAddItem();

@@ -1,6 +1,7 @@
 
 import {sideBarModal} from "./index"
 import {newForm} from "./newForm"
+import {changeForm} from "./switchingForm"
 export const sidebarTitle = document.getElementById("sideTitleInput")
 
 export const sideBarAddItem = () =>{
@@ -29,8 +30,8 @@ export const sideBarAddItem = () =>{
         
         sideBarModal.style.display = 'none';
         
-        newForm();
-
+        newForm(titleName);
+        changeForm();
     })
 }
 
